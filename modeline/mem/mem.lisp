@@ -49,7 +49,7 @@ total amount of memory, allocated memory, allocated/total ratio"
   (let* ((mem (mem-usage))
 	 (|%| (truncate (* 100 (nth 2 mem))))
 	 (allocated (truncate (/ (nth 1 mem) 1000))))
-    (format nil "MEM: ~4D mb ^[~A~3D%^] " allocated (bar-zone-color |%|) |%|)))
+    (format nil "MEM: ~4D mb " allocated (bar-zone-color |%|) |%|)))
 
 (defun fmt-mem-usage-bar (ml &optional (width *mem-usage-bar-width*) (full *mem-usage-bar-full*) (empty *mem-usage-bar-empty*))
   "Returns a coloured bar-graph representing the current allocation of memory."
